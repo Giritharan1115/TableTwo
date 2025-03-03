@@ -10,7 +10,7 @@ const statusClasses = {
 
 const TransactionTable = ({ transactions }) => {
   return (
-    <div className="container mt-4">
+    <div className="container w-50 mt-4">
       <div className="row">
         <div className="col text-start">
           <h4>Recent Transactions</h4>
@@ -33,16 +33,26 @@ const TransactionTable = ({ transactions }) => {
           {transactions.map((txn, index) => (
             <tr key={index}>
               <td>
-                <img
-                  src={BankLogos[txn.cardType]}
-                  alt={txn.cardType}
-                  width="30"
-                  className="me-2"
-                />
-                {txn.card} <span className="text-muted small">{txn.type}</span>
+                <div className="row">
+                  <div className="col-3">
+                    <img
+                      src={BankLogos[txn.cardType]}
+                      alt={txn.cardType}
+                      width="30"
+                      className="me-2"
+                    />
+                  </div>
+                  <div className="col d-flex flex-column">
+                    <span>{txn.card}</span>
+                    <span className="text-muted small">{txn.type}</span>
+                  </div>
+                </div>
               </td>
               <td>
-                {txn.date} <span className="text-muted small">{txn.time}</span>
+                <div className="d-flex flex-column">
+                  <span>{txn.date}</span>
+                  <span className="text-muted small">{txn.time}</span>
+                </div>
               </td>
               <td className={statusClasses[txn.status]}>{txn.status}</td>
               <td className={txn.amount > 0 ? "text-success" : "text-dark"}>
