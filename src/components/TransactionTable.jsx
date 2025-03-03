@@ -20,7 +20,7 @@ const TransactionTable = ({ transactions }) => {
           <FaEllipsisH className="m-2" size={20} />
         </div>
       </div>
-      <table className="table table-hover table-bordered shadow-sm">
+      <table className="table shadow-sm">
         <thead>
           <tr className="table-light">
             <th>Card</th>
