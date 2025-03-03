@@ -5,7 +5,7 @@ import { FaEllipsisH } from "react-icons/fa";
 const statusClasses = {
   Verified: "text-success",
   Rejected: "text-danger",
-  Pending: "text-warning",
+  Pending: "text-secondary",
 };
 
 const TransactionTable = ({ transactions }) => {
